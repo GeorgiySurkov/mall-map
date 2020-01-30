@@ -15,6 +15,7 @@
     "react-native": "0.61.5",
     "react-native-svg": "^11.0.1",
     "react-native-web": "^0.12.0",
+    "rn-bottom-drawer": "^1.4.3",
     "zoomable-svg": "^5.0.1"
   },
   "devDependencies": {

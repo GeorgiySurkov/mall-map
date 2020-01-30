@@ -1,7 +1,7 @@
 import React from 'react';
 import Svg, {Path, G} from 'react-native-svg';
 
-function SvgComponent(props) {
+function SvgMap(props) {
   const {left, top, zoom, resolution, width, height} = props;
   return (
     <Svg
@@ -462,4 +462,4 @@ function SvgComponent(props) {
   );
 }
 
-export default SvgComponent;
+export default SvgMap;
