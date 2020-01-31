@@ -13,6 +13,7 @@ import BottomDrawer from 'rn-bottom-drawer';
 import ZoomableSvg from './components/ZoomableSvg';
 import SearchIcon from './components/svg/SearchIcon';
 import MoreIcon from './components/svg/MoreIcon';
+import CrossIcon from './components/svg/CrossIcon';
 import ShopListItem from './components/ShopListItem';
 import {graph, shopNodes} from './data/data';
 
@@ -26,6 +27,7 @@ export default class App extends Component {
       searchText: '',
       toShop: null,
       ribList: [],
+      drawerUp: false,
     };
     this.findRouteToShop = this.findRouteToShop.bind(this);
   }
@@ -87,7 +89,7 @@ export default class App extends Component {
         />
         <BottomDrawer
           offset={0}
-          startUp={false}
+          startUp={this.state.drawerUp}
           containerHeight={500}
           downDisplay={420}>
           <View style={header.container}>
@@ -116,10 +118,15 @@ export default class App extends Component {
                   });
                 }}
               />
-            <View>
-              
             </View>
-            </View>
+            {this.state.searchText.length === 0 && (
+              <TouchableOpacity
+                style={search.crossIcon}
+                activeOpacity={0.6}
+                onPress={() => this.setState({searchText: ''})}>
+                <CrossIcon />
+              </TouchableOpacity>
+            )}
           </View>
           {/* <View style={styles.searchBox}>
             <TextInput placeholder="Найти магазин" />
@@ -133,6 +140,7 @@ export default class App extends Component {
                     onClick={() => {
                       this.setState({
                         toShop: shopName,
+                        drawerUp: true,
                       });
                       this.findRouteToShop(shopName);
                     }}
@@ -159,7 +167,9 @@ const search = StyleSheet.create({
     margin: 10,
     padding: 5,
     borderRadius: 5,
-    backgroundColor: '#888888',
+    // backgroundColor: '#888888',
+    borderColor: '#a6a6a6',
+    borderWidth: 2,
     height: 60,
     flexDirection: 'row',
     alignItems: 'center',
@@ -167,11 +177,15 @@ const search = StyleSheet.create({
   icon: {
     paddingLeft: 10,
   },
+  crossIcon: {
+    paddingHorizontal: 10,
+  },
   textInputContainer: {
     marginLeft: 10,
     flex: 1,
     alignSelf: 'stretch',
     justifyContent: 'center',
+    // backgroundColor: '#FF0000',
   },
   textInput: {
     fontSize: 24,

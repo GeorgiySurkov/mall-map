@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Text, View, TouchableOpacity, StyleSheet} from 'react-native';
+import React from 'react';
+import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 function ShopListItem(props) {
   return (
@@ -7,7 +7,7 @@ function ShopListItem(props) {
       onPress={props.onClick}
       activeOpacity={0.6}
       style={styles.container}>
-      <Text>{props.shopName}</Text>
+      <Text style={styles.text}>{props.shopName}</Text>
     </TouchableOpacity>
   );
 }
@@ -16,6 +16,9 @@ export default ShopListItem;
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 10,
+    marginHorizontal: 15,
+  },
+  text: {
+    fontSize: 24,
   },
 });
