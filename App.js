@@ -8,10 +8,13 @@ import {
   ScrollView,
   TextInput,
 } from 'react-native';
-import ZoomableSvg from './components/ZoomableSvg';
 import BottomDrawer from 'rn-bottom-drawer';
+
+import ZoomableSvg from './components/ZoomableSvg';
 import SearchIcon from './components/svg/SearchIcon';
 import MoreIcon from './components/svg/MoreIcon';
+import ShopListItem from './components/ShopListItem';
+import {graph, shopNodes} from './data/data';
 
 const {width, height} = Dimensions.get('window');
 
@@ -19,21 +22,69 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchItems: {
-        'Синема парк': 0,
-        'Gap Kids': 1,
-      },
+      searchShopList: [...Object.keys(shopNodes)],
+      searchText: '',
+      toShop: null,
+      ribList: [],
     };
+    this.findRouteToShop = this.findRouteToShop.bind(this);
+  }
+
+  findRouteToShop(shopName) {
+    let toNode = shopNodes[shopName];
+    console.log('toNode: ', toNode);
+    let fromNode = 1;
+    const nodesToVisit = [fromNode];
+    const visited = Array.from({length: 10}, () => false);
+    const ribList = [];
+    const backRefNodes = {};
+
+    while (nodesToVisit.length > 0) {
+      console.log('nodesToVisit: ', nodesToVisit);
+      let nowNode = nodesToVisit.shift();
+      console.log('nowNode: ', nowNode);
+      const neighbors = Object.keys(graph[nowNode].neighbors);
+      console.log('neighbors: ', neighbors);
+      for (let i = 0; i < neighbors.length; i++) {
+        let neighbor = parseInt(neighbors[i], 10);
+        if (neighbor === toNode) {
+          console.log('found route!');
+          backRefNodes[neighbor] = [
+            nowNode,
+            graph[nowNode].neighbors[neighbor.toString()],
+          ];
+          let nextNode = toNode;
+          while (nextNode !== fromNode) {
+            ribList.push(backRefNodes[nextNode][1]);
+            nextNode = backRefNodes[nextNode][0];
+          }
+          this.setState({
+            ribList: [...ribList],
+          });
+          return;
+        }
+        if (!visited[neighbor] && !nodesToVisit.includes(neighbor)) {
+          visited[neighbor] = true;
+          nodesToVisit.push(neighbor);
+          backRefNodes[neighbor] = [
+            nowNode,
+            graph[nowNode].neighbors[neighbor.toString()],
+          ];
+        }
+      }
+    }
   }
 
   render() {
-    const listItems = [];
-    for (let i = 0; i < 50; i++) {
-      listItems.push('Some text text text');
-    }
     return (
       <View style={styles.container}>
-        <ZoomableSvg width={width} height={height} minZoom={1} maxZoom={3.5} />
+        <ZoomableSvg
+          width={width}
+          height={height}
+          minZoom={1}
+          maxZoom={3.5}
+          ribList={this.state.ribList}
+        />
         <BottomDrawer
           offset={0}
           startUp={false}
@@ -49,8 +100,25 @@ export default class App extends Component {
             <View style={search.icon}>
               <SearchIcon />
             </View>
-            <View style={search.textInput}>
-              <TextInput placeholder="Найти магазин" />
+            <View style={search.textInputContainer}>
+              <TextInput
+                style={search.textInput}
+                placeholder="Найти магазин"
+                value={this.state.searchText}
+                onChangeText={value => {
+                  this.setState({
+                    searchShopList: [
+                      ...Object.keys(shopNodes).filter(shopName =>
+                        shopName.toLowerCase().includes(value.toLowerCase()),
+                      ),
+                    ],
+                    searchText: value,
+                  });
+                }}
+              />
+            <View>
+              
+            </View>
             </View>
           </View>
           {/* <View style={styles.searchBox}>
@@ -58,11 +126,18 @@ export default class App extends Component {
           </View> */}
           <ScrollView>
             <TouchableOpacity activeOpacity={1}>
-              {listItems.map(item => {
+              {this.state.searchShopList.map(shopName => {
                 return (
-                  <View style={{padding: 5}}>
-                    <Text>{item}</Text>
-                  </View>
+                  <ShopListItem
+                    shopName={shopName}
+                    onClick={() => {
+                      this.setState({
+                        toShop: shopName,
+                      });
+                      this.findRouteToShop(shopName);
+                    }}
+                    key={shopName}
+                  />
                 );
               })}
             </TouchableOpacity>
@@ -92,9 +167,14 @@ const search = StyleSheet.create({
   icon: {
     paddingLeft: 10,
   },
-  textInput: {
+  textInputContainer: {
     marginLeft: 10,
     flex: 1,
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+  },
+  textInput: {
+    fontSize: 24,
   },
 });
 

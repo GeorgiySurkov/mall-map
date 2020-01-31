@@ -82,6 +82,7 @@ for connection_id, connection in enumerate(filter(lambda el: 'stroke' in el.attr
         graph[start_node_i]['neighbors'][end_node_i] = connection_id
         graph[end_node_i]['neighbors'][start_node_i] = connection_id
     connection.set('id', str(connection_id))
+    connection.tag = 'Path'
     connections += 1
 print(connections)
 tree.write('id_map.svg')
