@@ -18,46 +18,140 @@ function SvgMap(props) {
           translateY: top * resolution,
           scale: zoom,
         }}>
-        { ribList.includes(1) && <Path d="M296 219V229" id="1" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(2) && <Path d="M296 209V219" id="2" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(0) && <Path d="M306 225L296 229" id="0" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(3) && <Path d="M296 199V209" id="3" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(4) && <Path d="M296 189V199" id="4" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(5) && <Path d="M296 189L286 186" id="5" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(6) && <Path d="M296 189L305 184" id="6" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(7) && <Path d="M305 184L314 179" id="7" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(8) && <Path d="M314 179L322 173" id="8" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(9) && <Path d="M286 186L279 186" id="9" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(10) && <Path d="M294 179L296 189" id="10" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(11) && <Path d="M306 225L316 225" id="11" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(12) && <Path d="M316 225L326 225" id="12" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(13) && <Path d="M326 225L331 234" id="13" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(14) && <Path d="M331 234L335 244" id="14" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(15) && <Path d="M335 244L338 254" id="15" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(16) && <Path d="M338 254L338 264" id="16" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(17) && <Path d="M338 264L338 274" id="17" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(18) && <Path d="M338 274L338 284" id="18" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(19) && <Path d="M338 284L338 294" id="19" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(20) && <Path d="M338 304V294" id="20" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(21) && <Path d="M338 314V304" id="21" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(22) && <Path d="M338 324V314" id="22" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(23) && <Path d="M338 334V324" id="23" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(24) && <Path d="M338 344V334" id="24" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(25) && <Path d="M338 354V344" id="25" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(26) && <Path d="M338 354L346 361" id="26" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(27) && <Path d="M346 361L354 368" id="27" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(28) && <Path d="M354 368L362 375" id="28" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(29) && <Path d="M362 375L370 382" id="29" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(30) && <Path d="M338 364V354" id="30" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(31) && <Path d="M338 374V364" id="31" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(32) && <Path d="M338 384V374" id="32" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(33) && <Path d="M336 388L338 384" id="33" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(34) && <Path d="M328 358L338 354" id="34" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(35) && <Path d="M318 362L328 358" id="35" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(36) && <Path d="M328 347L338 344" id="36" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(37) && <Path d="M338 294H348" id="37" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(38) && <Path d="M348 294H358" id="38" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
-        { ribList.includes(39) && <Path d="M358 294H364" id="39" stroke="#D00000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />}
+        { ribList.includes(0) && <Path d="M306 225L296 229" id="0" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(1) && <Path d="M296 219V229" id="1" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(2) && <Path d="M296 209V219" id="2" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(3) && <Path d="M296 199V209" id="3" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(4) && <Path d="M296 189V199" id="4" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(5) && <Path d="M296 189L286 186" id="5" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(6) && <Path d="M296 189L305 184" id="6" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(7) && <Path d="M305 184L314 179" id="7" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(8) && <Path d="M314 179L322 173" id="8" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(9) && <Path d="M286 186L279 186" id="9" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(10) && <Path d="M294 179L296 189" id="10" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(11) && <Path d="M306 225L316 225" id="11" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(12) && <Path d="M316 225L326 225" id="12" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(13) && <Path d="M326 225L331 234" id="13" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(14) && <Path d="M331 234L335 244" id="14" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(15) && <Path d="M335 244L338 254" id="15" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(16) && <Path d="M338 254L338 264" id="16" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(17) && <Path d="M338 264L338 274" id="17" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(18) && <Path d="M338 274L338 284" id="18" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(19) && <Path d="M338 284L338 294" id="19" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(20) && <Path d="M338 304V294" id="20" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(21) && <Path d="M338 314V304" id="21" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(22) && <Path d="M338 324V314" id="22" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(23) && <Path d="M338 334V324" id="23" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(24) && <Path d="M338 344V334" id="24" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(25) && <Path d="M338 354V344" id="25" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(26) && <Path d="M338 354L346 361" id="26" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(27) && <Path d="M346 361L354 368" id="27" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(28) && <Path d="M354 368L362 375" id="28" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(29) && <Path d="M362 375L370 382" id="29" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(30) && <Path d="M338 364V354" id="30" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(31) && <Path d="M338 374V364" id="31" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(32) && <Path d="M338 384V374" id="32" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(33) && <Path d="M336 388L338 384" id="33" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(34) && <Path d="M328 358L338 354" id="34" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(35) && <Path d="M318 362L328 358" id="35" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(36) && <Path d="M338 294H348" id="36" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(37) && <Path d="M348 294H358" id="37" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(38) && <Path d="M358 294H364" id="38" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(39) && <Path d="M294 179L290 170" id="39" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(40) && <Path d="M290 170L283 163" id="40" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(41) && <Path d="M283 163L274 158" id="41" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(42) && <Path d="M274 158L264 154" id="42" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(43) && <Path d="M264 154L254 150" id="43" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(44) && <Path d="M254 150L243 147" id="44" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(45) && <Path d="M243 147L233 147" id="45" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(46) && <Path d="M233 147L223 147" id="46" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(47) && <Path d="M223 147L213 147" id="47" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(48) && <Path d="M213 147L203 147" id="48" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(49) && <Path d="M203 147L193 147" id="49" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(50) && <Path d="M193 147L183 147" id="50" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(51) && <Path d="M183 147L173 147" id="51" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(52) && <Path d="M173 147L163 147" id="52" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(53) && <Path d="M163 147L153 147" id="53" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(54) && <Path d="M153 147L143 147" id="54" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(55) && <Path d="M143 147L133 147" id="55" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(56) && <Path d="M124 157L133 147" id="56" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(57) && <Path d="M115 167L124 157" id="57" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(58) && <Path d="M106 177L115 167" id="58" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(59) && <Path d="M106 187V177" id="59" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(60) && <Path d="M109 190L106 187" id="60" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(61) && <Path d="M133 147L123 147" id="61" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(62) && <Path d="M123 147L113 147" id="62" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(63) && <Path d="M113 147L103 147" id="63" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(64) && <Path d="M103 147L93 147" id="64" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(65) && <Path d="M93 147V137" id="65" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(66) && <Path d="M83 137H93" id="66" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(67) && <Path d="M73 137H83" id="67" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(68) && <Path d="M63 137H73" id="68" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(69) && <Path d="M53 137H63" id="69" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(70) && <Path d="M53 137V147" id="70" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(71) && <Path d="M53 147V157" id="71" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(72) && <Path d="M53 157V167" id="72" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(73) && <Path d="M53 167V177" id="73" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(74) && <Path d="M53 177V187" id="74" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(75) && <Path d="M53 187L60 195" id="75" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(76) && <Path d="M60 195L67 203" id="76" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(77) && <Path d="M67 203L77 203" id="77" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(78) && <Path d="M77 203L87 203" id="78" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(79) && <Path d="M87 203L90 213" id="79" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(80) && <Path d="M90 213L91 223" id="80" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(81) && <Path d="M91 223L89 233" id="81" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(82) && <Path d="M89 233L89 243" id="82" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(83) && <Path d="M89 243L89 253" id="83" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(84) && <Path d="M89 253L89 263" id="84" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(85) && <Path d="M89 263L89 266" id="85" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(86) && <Path d="M89 253H79" id="86" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(87) && <Path d="M99 253H89" id="87" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(88) && <Path d="M109 253H99" id="88" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(89) && <Path d="M119 253H109" id="89" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(90) && <Path d="M129 253H119" id="90" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(91) && <Path d="M139 253H129" id="91" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(92) && <Path d="M149 253H139" id="92" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(93) && <Path d="M159 253H149" id="93" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(94) && <Path d="M169 253H159" id="94" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(95) && <Path d="M179 253H169" id="95" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(96) && <Path d="M189 253H179" id="96" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(97) && <Path d="M199 253H189" id="97" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(98) && <Path d="M209 253H199" id="98" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(99) && <Path d="M219 253H209" id="99" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(100) && <Path d="M229 253H219" id="100" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(101) && <Path d="M239 253H229" id="101" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(102) && <Path d="M249 253H239" id="102" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(103) && <Path d="M259 253H249" id="103" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(104) && <Path d="M269 253H259" id="104" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(105) && <Path d="M269 253V263" id="105" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(106) && <Path d="M269 263V273" id="106" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(107) && <Path d="M269 273V283" id="107" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(108) && <Path d="M269 283V293" id="108" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(109) && <Path d="M269 293V303" id="109" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(110) && <Path d="M269 303V313" id="110" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(111) && <Path d="M269 313V323" id="111" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(112) && <Path d="M269 323L262 330" id="112" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(113) && <Path d="M262 330L262 341" id="113" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(114) && <Path d="M262 341H272" id="114" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(115) && <Path d="M272 341H282" id="115" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(116) && <Path d="M282 341L291 346" id="116" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(117) && <Path d="M291 346L301 346" id="117" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(118) && <Path d="M301 346L311 346" id="118" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(119) && <Path d="M311 346L320 346" id="119" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(120) && <Path d="M320 346L329 346" id="120" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(121) && <Path d="M329 346L338 344" id="121" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(122) && <Path d="M278 245L269 253" id="122" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(123) && <Path d="M287 237L278 245" id="123" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(124) && <Path d="M296 229L287 237" id="124" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(125) && <Path d="M79 253H69" id="125" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(126) && <Path d="M69 253H59" id="126" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(127) && <Path d="M59 253H54" id="127" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(128) && <Path d="M43 137H53" id="128" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(129) && <Path d="M93 137L88 128" id="129" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(130) && <Path d="M88 128L81 120" id="130" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(131) && <Path d="M81 120L74 112" id="131" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(132) && <Path d="M74 112L73 102" id="132" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
+{ ribList.includes(133) && <Path d="M73 102L73 95" id="133" stroke="#D00000" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} /> }
         <Path
           d="M216 5.5L1 0v102.5l42 1.235 16.5.486 9 .279c0-3 2-5 4.5-5s4.5 2 4.5 5l8 .088 15 .164 15.5.17 28.5.312 14.5.158 15 .165 40.5.443V89h8V74H216V5.5z"
           fill="#E9B843"

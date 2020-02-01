@@ -27,7 +27,6 @@ export default class App extends Component {
       searchText: '',
       toShop: null,
       ribList: [],
-      drawerUp: false,
     };
     this.findRouteToShop = this.findRouteToShop.bind(this);
   }
@@ -89,7 +88,7 @@ export default class App extends Component {
         />
         <BottomDrawer
           offset={0}
-          startUp={this.state.drawerUp}
+          startUp={false}
           containerHeight={500}
           downDisplay={420}>
           <View style={header.container}>
@@ -104,6 +103,7 @@ export default class App extends Component {
             </View>
             <View style={search.textInputContainer}>
               <TextInput
+                autoGrow={false}
                 style={search.textInput}
                 placeholder="Найти магазин"
                 value={this.state.searchText}
@@ -119,11 +119,16 @@ export default class App extends Component {
                 }}
               />
             </View>
-            {this.state.searchText.length === 0 && (
+            {this.state.searchText.length !== 0 && (
               <TouchableOpacity
                 style={search.crossIcon}
                 activeOpacity={0.6}
-                onPress={() => this.setState({searchText: ''})}>
+                onPress={() =>
+                  this.setState({
+                    searchText: '',
+                    searchShopList: [...Object.keys(shopNodes)],
+                  })
+                }>
                 <CrossIcon />
               </TouchableOpacity>
             )}
@@ -140,7 +145,6 @@ export default class App extends Component {
                     onClick={() => {
                       this.setState({
                         toShop: shopName,
-                        drawerUp: true,
                       });
                       this.findRouteToShop(shopName);
                     }}
@@ -183,12 +187,13 @@ const search = StyleSheet.create({
   textInputContainer: {
     marginLeft: 10,
     flex: 1,
-    alignSelf: 'stretch',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     // backgroundColor: '#FF0000',
   },
   textInput: {
     fontSize: 24,
+    // backgroundColor: '#00FF00',
+    padding: 0,
   },
 });
 

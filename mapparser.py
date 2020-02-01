@@ -86,6 +86,29 @@ for connection_id, connection in enumerate(filter(lambda el: 'stroke' in el.attr
     connections += 1
 print(connections)
 tree.write('id_map.svg')
+svg_text = ET.tostring(svg).decode('utf-8').split('\n')
+svg_text_copy = svg_text.copy()
+for i, line in enumerate(svg_text):
+    if line.startswith('<Path'):
+        a = line.split()
+        new_line = []
+        for word in a:
+            if word.startswith('id='):
+                id = word.split('"')[-2]
+                new_line.append(f'id="{id}"')
+            elif word.startswith('stroke-width='):
+                new_line.append(f'strokeWidth={{{2}}}')
+            elif word.startswith('stroke-linecap='):
+                new_line.append(f'strokeLinecap="round"')
+            elif word.startswith('stroke-linejoin='):
+                new_line.append(f'strokeLinejoin="round"')
+            else:
+                new_line.append(word)
+        new_line = ' '.join(new_line)
+        svg_text_copy[i] = f'{{ ribList.includes({id}) && {new_line} }}'
+
+with open('id_map.svg', 'w') as f:
+    f.write('\n'.join(svg_text_copy))
 
 with open('graph.json', 'w') as f:
     json.dump({'nodes': graph}, f, ensure_ascii=False)
